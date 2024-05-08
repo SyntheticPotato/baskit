@@ -27,7 +27,6 @@ export default function App() {
       <Stack.Navigator>
 
         <Stack.Screen name="home" component={HomeScreen} />
-        {/* <Stack.Screen name="not home" component={NotHomeScreen} /> */}
         <Stack.Screen name="suggested" component={SuggestedScreen} />
         <Stack.Screen name="scan" component={ScanScreen} />
         <Stack.Screen name="logs" component={LogsScreen} />

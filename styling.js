@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'white'
     },
+
+    image: {
+        width: 200,
+        height: 200,
+        resizeMode: 'contain',
+    },
 });
 
 export default styles;
