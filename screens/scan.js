@@ -1,12 +1,24 @@
 import { View, Text, Button, Image } from "react-native";
 import styles from "../styling";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { scan } from "../utils/ocr";
 import * as DocumentPicker from 'expo-document-picker';
+import { ImageContext } from "../utils/image_provider";
 
 
-const ScanScreen = (navigation) => {
+const ScanScreen = ({ navigation }) => {
+    const { taken_image } = useContext(ImageContext)
     const [selected_img, set_selected_img] = useState("../assets/no_image.png")
+
+    // TODO: Ask nathan if theres a better way to transfer the taken image between screens
+    // TODO: Ask nathan if theres a better way to transfer the taken image between screens
+    // TODO: Ask nathan if theres a better way to transfer the taken image between screens
+    useEffect(() => {
+        if (taken_image) {
+            console.log("updated image to the camera image")
+            set_selected_img(taken_image)
+        }
+    }, [taken_image])
 
     useEffect(() => {
         if (selected_img) {
@@ -30,12 +42,18 @@ const ScanScreen = (navigation) => {
         }
     }
 
+
+
     return (
         <View style={styles.titleContainer}>
             <Text style={styles.titleText}>Scan your receipts</Text>
             <Button
                 title="pick image"
                 onPress={() => pick_image()}
+            />
+            <Button
+                title="take a picture"
+                onPress={() => navigation.navigate("camera")}
             />
 
             <Image source={{ uri: selected_img }} style={styles.image} />

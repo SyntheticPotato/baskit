@@ -11,6 +11,8 @@ import { useColorScheme } from 'react-native';
 import SuggestedScreen from './screens/suggested';
 import ScanScreen from './screens/scan';
 import LogsScreen from './screens/logs';
+import CameraScreen from './utils/camera';
+import { ImageProvider } from './utils/image_provider';
 
 const Stack = createNativeStackNavigator()
 
@@ -23,15 +25,21 @@ export default function App() {
       documentTitle={{ enabled: false }}
       theme={DarkTheme}
     >
+      <ImageProvider>
 
-      <Stack.Navigator>
+        <Stack.Navigator>
 
-        <Stack.Screen name="home" component={HomeScreen} />
-        <Stack.Screen name="suggested" component={SuggestedScreen} />
-        <Stack.Screen name="scan" component={ScanScreen} />
-        <Stack.Screen name="logs" component={LogsScreen} />
+          <Stack.Screen name="home" component={HomeScreen} />
+          <Stack.Screen name="suggested" component={SuggestedScreen} />
 
-      </Stack.Navigator >
+          <Stack.Screen name="scan" component={ScanScreen} />
+          <Stack.Screen name="camera" component={CameraScreen} />
+
+          <Stack.Screen name="logs" component={LogsScreen} />
+
+        </Stack.Navigator >
+      </ImageProvider>
+
     </NavigationContainer>
 
   );
