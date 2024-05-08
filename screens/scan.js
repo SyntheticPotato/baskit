@@ -4,11 +4,16 @@ import { useContext, useEffect, useState } from "react";
 import { scan } from "../utils/ocr";
 import * as DocumentPicker from 'expo-document-picker';
 import { ImageContext } from "../utils/image_provider";
+import { ping_server } from "../utils/server_functions";
 
 
 const ScanScreen = ({ navigation }) => {
     const { taken_image } = useContext(ImageContext)
     const [selected_img, set_selected_img] = useState("../assets/no_image.png")
+
+    useEffect(() => {
+        ping_server()
+    }, [])
 
     // TODO: Ask nathan if theres a better way to transfer the taken image between screens
     // TODO: Ask nathan if theres a better way to transfer the taken image between screens

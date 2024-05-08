@@ -6,7 +6,6 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import HomeScreen from './screens/home';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import NotHomeScreen from './screens/notHome';
 import { useColorScheme } from 'react-native';
 import SuggestedScreen from './screens/suggested';
 import ScanScreen from './screens/scan';
