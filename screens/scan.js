@@ -1,7 +1,6 @@
 import { View, Text, Button, Image } from "react-native";
 import styles from "../styling";
 import { useContext, useEffect, useState } from "react";
-import { scan } from "../utils/ocr";
 import * as DocumentPicker from 'expo-document-picker';
 import { ImageContext } from "../utils/image_provider";
 import { ping_server } from "../utils/server_functions";
@@ -27,7 +26,7 @@ const ScanScreen = ({ navigation }) => {
 
     useEffect(() => {
         if (selected_img) {
-            scan(selected_img)
+            // scan(selected_img)
         }
     }, [selected_img])
 
