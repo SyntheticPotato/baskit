@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import * as DocumentPicker from 'expo-document-picker';
 import { ImageContext } from "../utils/image_provider";
 import { ping_server } from "../utils/server_functions";
+import { scan } from "../server/utils/ocr";
 
 
 const ScanScreen = ({ navigation }) => {
@@ -26,7 +27,7 @@ const ScanScreen = ({ navigation }) => {
 
     useEffect(() => {
         if (selected_img) {
-            // scan(selected_img)
+            scan(selected_img)
         }
     }, [selected_img])
 

@@ -1,10 +1,12 @@
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, Image } from "react-native";
 import styles from "../styling";
 
 const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>Baskit</Text>
+            <Image source={{ uri: '../assets/splash.png', headers: { 'Accept': 'image/*' } }} style={styles.image_title} />
+
+
             <Button
                 title="suggested"
                 onPress={() => navigation.navigate("suggested")}

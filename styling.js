@@ -18,6 +18,13 @@ const styles = StyleSheet.create({
         height: 500,
         resizeMode: 'contain',
     },
+
+    image_title: {
+        width: 500,
+        height: 500,
+        resizeMode: 'center',
+    },
+
 });
 
 export default styles;
