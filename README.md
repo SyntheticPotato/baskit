@@ -1,3 +1,13 @@
+# Features
+1. File upload
+2. Photography
+3. client-side OCR
+## Todo:
+1. proper ocr text parsing
+2. implement database 
+	1. items and their cost
+	2. vendors
+
 # Prerequsites
 
  1. install node (and NPM)
